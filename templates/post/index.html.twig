@@ -10,21 +10,11 @@
     </button>
 
     <p>Scrolly est une application de gestion de posts.</p>
-    {% for post in posts %}
-        <div class="post">
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.description }}</p>
-        </div>
-    {% else %}
-        <p>Aucun post trouvé.</p>
-    {% endfor %}
-    {% for user in users %}
-        <div class="user">
-            <h2>{{ user.pseudo }}</h2>
-            <p>{{ user.email }}</p>
-        </div>
-    {% else %}
-        <p>Aucun utilisateur trouvé.</p>
+    
+    {%for post in posts%}
+        <p>{{ post.user.pseudo }}</p>
+        <p>{{ post.title }}</p>
+        <p>{{ post.description }}</p>
     {% endfor %}
 </div>
 {% endblock %}
