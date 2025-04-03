@@ -5,6 +5,9 @@
 {% block body %}
 <div class="example-wrapper">
     <h1>Bienvenue sur Scrolly</h1>
+    <button>
+        <a href="{{ path('app_login') }}">Log out</a>
+    </button>
 
     <p>Scrolly est une application de gestion de posts.</p>
     {% for post in posts %}
