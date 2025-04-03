@@ -11,16 +11,15 @@ use Symfony\Component\Routing\Attribute\Route;
 final class PostController extends AbstractController
 {
     #[Route('/post', name: 'app_post')]
-    public function show(PostRepository $postRepository, UserRepository $userRepository): Response
+    public function show(PostRepository $postRepository): Response
     {
 
         $posts = $postRepository -> findAll();
-        $users = $userRepository -> findAll();
-        $user = $this->getUser();
-
+        // $users = $userRepository -> findAll();
+        // $user = $this->getUser();
         return $this->render('post/index.html.twig', [
             'posts' => $posts,
-            'users' => $users
+            // 'user' => $user
         ]);
     }
 }
