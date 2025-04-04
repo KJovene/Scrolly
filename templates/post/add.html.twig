@@ -18,10 +18,10 @@
         {{ form_start(form) }}
         <div class="formWrapperAdd">
             <div class="inputWrapperAdd">
+                <label class="inputImage">Insérer une image</label>
                 {{ form_row(form.image, {
                     label: ' '
                 }) }}
-                <label class="inputImage">Insérer une image</label>
             </div>
             <div class="inputWrapperAdd">
                 <label>Titre</label>
@@ -36,7 +36,7 @@
                 }) }}
             </div>
 
-            <button class="btn btn-primary">Upload</button>
+            <button class="btnUpload">Upload</button>
         </div>
         {{ form_end(form) }}
     </div>

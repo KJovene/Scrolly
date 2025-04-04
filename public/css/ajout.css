@@ -38,14 +38,27 @@ body {
     width: 440px;
     padding-top: 40px;
     padding-bottom: 15px;
-    
+    gap:15px
 }
 
 .inputWrapperAdd #post_image {
     width: 430px;
-    height: 420px;
+    height: 347px;
     background-color: #000629;
     display: flex;
+}
+
+.inputWrapperAdd input[type=file]::file-selector-button {
+    margin-right: 8px;
+    border: 1px solid #fff;
+    border-radius: 5%;
+    background: #3777FF;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer; 
+    position: relative;
+    top: 130px;  
+    left: 80px
 }
 
 .Slogo, .SearchLogo, .BellFillLogo {
@@ -92,4 +105,19 @@ body {
     font-weight: 400;
     line-height: normal;
     letter-spacing: 2.4px;
+}
+
+.btnUpload{
+    border-radius: 50px;
+    border: 2px solid #FFF;
+    background: var(--Primary, #3777FF);
+    padding: 10px 80px;
+    color: #D9D9D9;
+    font-family: Syne;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.4px;
+    
 }
