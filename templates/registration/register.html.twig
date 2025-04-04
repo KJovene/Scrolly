@@ -2,23 +2,56 @@
 
 {% block title %}Register{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/inscription.css') }}" />
+{% endblock %}
+
 {% block body %}
-    <h1>Register</h1>
+    
+<div class="body-wrapperRegister">
+    <img src="{{ asset('Images/LogoScrolly.svg')}}" alt="Logo" class="logoScrollyRegister" />
+    <div class="box-wrapperRegister">
+        <img src="{{ asset('Images/TypoScrolly.svg')}}" alt="Logo" class="typoScrollyRegister" />
 
-    {{ form_errors(registrationForm) }}
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.pseudo) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
-
-    <button>
-    <a href="{{ path('app_home') }}">Retour</a>
-    </button>
+        {{ form_errors(registrationForm) }}
+    
+        {{ form_start(registrationForm) }}
+        <div class="labelWrapperRegister">
+            <div class="formInput">
+                <label>Pseudo</label>
+                {{ form_row(registrationForm.pseudo, {
+                    label: ' '
+                }) }}
+            </div>
+            <div class="formInput">
+                <label>Email</label>
+                {{ form_row(registrationForm.email, {
+                    label: ' '
+                }) }}
+            </div>
+        
+            <div class="formInput">
+                <label>Mot de passe</label>
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: ' '
+                    }) }}
+            </div>
+            <div class="formCheck">
+                
+                {{ form_row(registrationForm.agreeTerms, {
+                    label: ' '
+                }) }}
+                
+                <label class="labelCheck">Accepter les conditions</label>
+            </div>
+        </div>
+        <button type="submit" class="btnInscriptionRegister" >S'inscrire</button>
+        
+        {{ form_end(registrationForm) }}
+    
+        <button class="logoutBtnRegister">
+        <a href="{{ path('app_home') }}">Logout</a>
+        </button>
+    </div>
+</div>
 {% endblock %}
