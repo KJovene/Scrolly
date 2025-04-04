@@ -2,23 +2,41 @@
 
 {% block title %}Scrolly{% endblock %}
 
-{% block body %}
-<div class="example-wrapper">
-    <h1>Bienvenue sur Scrolly</h1>
-    <button>
-        <a href="{{ path('app_login') }}">Log out</a>
-    </button>
-    <button>
-        <a href="{{ path('app_add') }}">Ajouter un post</a>
-    </button>
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/post.css') }}" />
+{% endblock %}
 
-    <p>Scrolly est une application de gestion de posts.</p>
+{% block body %}
+<div class="bodyWrapperPost">
+    <div class="HeaderPost">
+        <img src="{{ asset('Images/LogoSScrolly.svg') }}" alt="SLogo" class="Slogo" width="200px"/>
+        <div class="NotifAndMessage">
+            <img src="{{ asset('Images/SearchLogo.svg') }}" alt="SearchLogo" class="SearchLogo" width="200px"/>
+            <img src="{{ asset('Images/BellFillLogo.svg') }}" alt="BellFill" class="BellFillLogo" width="200px"/>
+        </div>
+    </div>
     
-    {% for post in posts %}
-        <p>{{ post.user.pseudo }}</p>
-        <p>{{ post.title }}</p>
-        <p>{{ post.description }}</p>
-        <img src="data:image/png;base64,{{ post.image }}" alt="Image" width="200px"/>
-    {% endfor %}
+        {% for post in posts %}
+        <div class="Publication">
+            <div class="PublicationPseudo">{{ post.user.pseudo }}</div>
+            <div class="containerTitle">
+                <div class="PublicationTitle">{{ post.title }}</div>
+            </div>
+            <div class="backGroundImage">
+                <img src="data:image/png;base64,{{ post.image }}" alt="Image" class="PublicationImage" width="440px" />
+            </div>
+            <div class="PublicationDescription">{{ post.description }}</div>
+        </div>
+        {% endfor %}
+
+
+    <div class="FooterPost" >
+        <img src="{{ asset('Images/HouseDoorFill.svg') }}" alt="HouseDoor" class="HouseDoorLogo" width="200px"/>
+        <img src="{{ asset('Images/IconUser.svg') }}" alt="IconUser" class="IconUserLogo" width="200px"/>
+        <a href="{{ path('app_add') }}"><img src="{{ asset('Images/AddButton.svg') }}" alt="AddButtonLogo" class="AddButtonLogo" width="200px"/></a>
+        <a href="{{ path('app_login') }}"></a>
+        <img src="{{ asset('Images/ArrowButton.svg') }}" alt="ArrowButtonLogo" class="ArrowButtonLogo" width="200px"/>
+        <a href="{{ path('app_login') }}"><img src="{{ asset('Images/SettingButton.svg') }}" alt="SettingButtonLogo" class="SettingButtonLogo" width="200px"/></a>   
+    <div/>
 </div>
 {% endblock %}

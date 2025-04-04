@@ -1,0 +1,82 @@
+body {
+  background-color: rgb(79, 79, 79);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bodyWrapperPost {
+  display: flex;
+  width: 440px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 90vh;
+  background-color: #3777FF;
+  overflow: scroll;
+}
+.HeaderPost {
+  display: flex;
+  width: 440px;
+  height: 50px;
+  background-color: #000629;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  border-bottom: solid 1px #3777FF;
+}
+.Slogo, .SearchLogo, .BellFillLogo {
+  display: flex;
+  width: 30px;
+  padding: 10px;
+}
+.NotifAndMessage {
+  display: flex;
+  flex-direction: row;
+}
+.FooterPost {
+  display: flex;
+  width: 440px;
+  height: 50px;
+  background-color: #000629;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 2vh;
+  position: absolute;
+  border-top: solid 1px #3777FF;
+}
+.HouseDoorLogo, .IconUserLogo, .AddButtonLogo, .ArrowButtonLogo, .SettingButtonLogo{
+  display: flex;
+  width: 30px;
+  padding-left: 30px;
+}
+.Publication {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 440px;
+  color: #000629;
+  background-color: #FFE156;
+  border-bottom: solid 2px #3777FF;
+  gap: -10px;
+  padding-top: 10px;
+}
+.PublicationTitle {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.containerTitle {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.PublicationPseudo {
+  display: flex;
+  padding: 8px;
+}
+.PublicationDescription {
+  display: flex;
+  padding: 8px;
+}
