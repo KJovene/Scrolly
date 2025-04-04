@@ -8,13 +8,17 @@
     <button>
         <a href="{{ path('app_login') }}">Log out</a>
     </button>
+    <button>
+        <a href="{{ path('app_add') }}">Ajouter un post</a>
+    </button>
 
     <p>Scrolly est une application de gestion de posts.</p>
     
-    {%for post in posts%}
+    {% for post in posts %}
         <p>{{ post.user.pseudo }}</p>
         <p>{{ post.title }}</p>
         <p>{{ post.description }}</p>
+        <img src="data:image/png;base64,{{ post.image }}" alt="Image" width="200px"/>
     {% endfor %}
 </div>
 {% endblock %}
