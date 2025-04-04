@@ -16,6 +16,9 @@ final class PostController extends AbstractController
     #[Route('/post', name: 'app_post')]
     public function show(PostRepository $postRepository): Response
     {
+        if(!$this->getUser()){
+            return $this->redirectToRoute('app_login');
+        }
 
         $posts = $postRepository -> findAll();
 
@@ -27,6 +30,9 @@ final class PostController extends AbstractController
     #[Route('/add', name: 'app_add')]
     public function upload(Request $request, EntityManagerInterface $entityManager): Response
     {
+        if(!$this->getUser()){
+            return $this->redirectToRoute('app_login');
+        }
         $form = $this->createForm(PostType::class);
         $form->handleRequest($request);
 
