@@ -1,13 +1,53 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/ajout.css') }}" />
+{% endblock %}
 {% block body %}
-    <h1>Upload Post</h1>
 
-    {{ form_start(form) }}
-        {{ form_row(form.image) }}
-        {{ form_row(form.title) }}
-        {{ form_row(form.description) }}
-        <button class="btn btn-primary">Upload</button>
-    {{ form_end(form) }}
+    <div class="body-wrapperAdd">
+*            
+        <div class="HeaderPost">
+        <img src="{{ asset('Images/LogoSScrolly.svg') }}" alt="SLogo" class="Slogo" width="200px"/>
+        <div class="NotifAndMessage">
+            <img src="{{ asset('Images/SearchLogo.svg') }}" alt="SearchLogo" class="SearchLogo" width="200px"/>
+            <img src="{{ asset('Images/BellFillLogo.svg') }}" alt="BellFill" class="BellFillLogo" width="200px"/>
+        </div>
+        </div>
+
+
+        {{ form_start(form) }}
+        <div class="formWrapperAdd">
+            <div class="inputWrapperAdd">
+                {{ form_row(form.image, {
+                    label: ' '
+                }) }}
+                <label class="inputImage">Insérer une image</label>
+            </div>
+            <div class="inputWrapperAdd">
+                <label>Titre</label>
+                {{ form_row(form.title, {
+                    label: " "
+                }) }}
+            </div>
+            <div class="inputWrapperAdd">
+                <label>Description</label>
+                {{ form_row(form.description, {
+                    label: " "
+                }) }}
+            </div>
+
+            <button class="btn btn-primary">Upload</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+    <div class="FooterPost" >
+        <img src="{{ asset('Images/HouseDoorFill.svg') }}" alt="HouseDoor" class="HouseDoorLogo" width="200px"/>
+        <img src="{{ asset('Images/IconUser.svg') }}" alt="IconUser" class="IconUserLogo" width="200px"/>
+        <a href="{{ path('app_add') }}"><img src="{{ asset('Images/AddButton.svg') }}" alt="AddButtonLogo" class="AddButtonLogo" width="200px"/></a>
+        <a href="{{ path('app_login') }}"></a>
+        <img src="{{ asset('Images/ArrowButton.svg') }}" alt="ArrowButtonLogo" class="ArrowButtonLogo" width="200px"/>
+        <a href="{{ path('app_login') }}"><img src="{{ asset('Images/SettingButton.svg') }}" alt="SettingButtonLogo" class="SettingButtonLogo" width="200px"/></a>   
+    <div/>
 
 {% endblock %}
