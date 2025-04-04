@@ -15,28 +15,30 @@
             <img src="{{ asset('Images/BellFillLogo.svg') }}" alt="BellFill" class="BellFillLogo" width="200px"/>
         </div>
     </div>
-    
-        {% for post in posts %}
-        <div class="Publication">
-            <div class="utilisateur">
-                <img src="{{ asset('Images/PhotoUtilisateur.png') }}" alt="PhotoUtilisateur" class="PhotoUtilisateur"/>
-                <div class="PublicationPseudo">{{ post.user.pseudo }}</div>
-            </div>
-            <div class="containerTitle">
-                <div class="PublicationTitle">{{ post.title }}</div>
-            </div>
-            <div class="backGroundImage">
-                <img src="data:image/png;base64,{{ post.image }}" alt="Image" class="PublicationImage" width="440px" />
-            </div>
-            <div class="PublicationDescription">
-                {{ post.description }}
-                <div class="LikeAndShare">
-                    <img src="{{ asset('Images/ShareButton.svg') }}" alt="ShareLogo" class="ShareButton"/>
-                    <img src="{{ asset('Images/LikeButton.png') }}" alt="LikeLogo" class="LikeButton"/>
+    <div class="boxPublication">
+        
+            {% for post in posts %}
+            <div class="Publication">
+                <div class="utilisateur">
+                    <img src="{{ asset('Images/PhotoUtilisateur.png') }}" alt="PhotoUtilisateur" class="PhotoUtilisateur"/>
+                    <div class="PublicationPseudo">{{ post.user.pseudo }}</div>
+                </div>
+                <div class="containerTitle">
+                    <div class="PublicationTitle">{{ post.title }}</div>
+                </div>
+                <div class="backGroundImage">
+                    <img src="data:image/png;base64,{{ post.image }}" alt="Image" class="PublicationImage" width="440px" />
+                </div>
+                <div class="PublicationDescription">
+                    {{ post.description }}
+                    <div class="LikeAndShare">
+                        <img src="{{ asset('Images/ShareButton.svg') }}" alt="ShareLogo" class="ShareButton"/>
+                        <img src="{{ asset('Images/LikeButton.png') }}" alt="LikeLogo" class="LikeButton"/>
+                    </div>
                 </div>
             </div>
-        </div>
-        {% endfor %}
+            {% endfor %}
+    </div>
 
 
     <div class="FooterPost" >

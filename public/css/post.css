@@ -58,7 +58,7 @@ body {
   background-color: #FFE156;
   border-bottom: solid 2px #3777FF;
   gap: -10px;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 .PublicationTitle {
   display: flex;
@@ -98,4 +98,8 @@ body {
   display: flex;
   align-items: center;
   padding-left: 8px;
+}
+
+.boxPublication{
+  padding-top: 30px;
 }
