@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Login{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
+{% endblock %}
 
 {% block body %}
 <form method="post">
@@ -8,29 +12,32 @@
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+    <div class="bodyWrapperLogin">
+        <img src="{{ asset('Images/LogoScrolly.svg')}}" alt="Logo" class="logoScrollyLogin" />
+        <img src="{{ asset('Images/TypoScrolly.svg')}}" alt="Logo" class="typoScrollyLogin" />
+        
+        <div class="labelWrapperLogin">
+            <div class="emailLabel">
+                <label for="inputEmail">Email</label>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" placeholder="Entrez votre mail..." required autofocus>
+            </div>
+            <div class="passwordLabel">
+                <label for="inputPassword">Password</label>
+                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" placeholder="Mot de passe..." required>
+            </div>
+            <div class="checkboxLogin">
+                    <input type="checkbox" name="_remember_me"> 
+                <label>
+                    Remember me
+                </label>
+            </div>
         </div>
-    {% endif %}
-
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" name="_remember_me"> Remember me
-        </label>
+        <button class="ConnexionBtnLogin" type="submit">
+            Connexion
+        </button>
+        <button class="logoutBtnLogin">
+            <a href="{{ path('app_logout') }}">Logout</a>
+        </button>
     </div>
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-    <button>
-        <a href="{{ path('app_home') }}">Retour</a>
-    </button>
 </form>
 {% endblock %}

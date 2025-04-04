@@ -55,6 +55,7 @@ body {
   border: 2px solid #FFF;
   background: var(--Primary, #3777FF);
   padding: 10px 80px;
+  border: none;
 }
 .btnInscription a {
   text-decoration: none;

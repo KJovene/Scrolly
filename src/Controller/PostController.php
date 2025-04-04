@@ -18,12 +18,9 @@ final class PostController extends AbstractController
     {
 
         $posts = $postRepository -> findAll();
-        // $image64 = $posts -> getImage();
-        // $image64 = base64_decode($image64->getImage());
 
         return $this->render('post/index.html.twig', [
             'posts' => $posts,
-            // 'image64' => $image64,
         ]);
     }
 
