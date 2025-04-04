@@ -25,7 +25,13 @@
             <div class="backGroundImage">
                 <img src="data:image/png;base64,{{ post.image }}" alt="Image" class="PublicationImage" width="440px" />
             </div>
-            <div class="PublicationDescription">{{ post.description }}</div>
+            <div class="PublicationDescription">
+                {{ post.description }}
+                <div class="LikeAndShare">
+                    <img src="{{ asset('Images/ShareButton.svg') }}" alt="ShareLogo" class="ShareButton"/>
+                    <img src="{{ asset('Images/LikeButton.png') }}" alt="LikeLogo" class="LikeButton"/>
+                </div>
+            </div>
         </div>
         {% endfor %}
 
