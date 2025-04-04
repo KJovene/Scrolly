@@ -18,7 +18,10 @@
     
         {% for post in posts %}
         <div class="Publication">
-            <div class="PublicationPseudo">{{ post.user.pseudo }}</div>
+            <div class="utilisateur">
+                <img src="{{ asset('Images/PhotoUtilisateur.png') }}" alt="PhotoUtilisateur" class="PhotoUtilisateur"/>
+                <div class="PublicationPseudo">{{ post.user.pseudo }}</div>
+            </div>
             <div class="containerTitle">
                 <div class="PublicationTitle">{{ post.title }}</div>
             </div>
