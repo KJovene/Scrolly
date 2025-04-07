@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Scrolly{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/post.css') }}" />
+{% endblock %}
+
+{% block body %}
+<div class="bodyWrapperPost">
+    <div class="HeaderPost">
+        <img src="{{ asset('Images/LogoSScrolly.svg') }}" alt="SLogo" class="Slogo" width="200px"/>
+        <div class="NotifAndMessage">
+            <img src="{{ asset('Images/SearchLogo.svg') }}" alt="SearchLogo" class="SearchLogo" width="200px"/>
+            <img src="{{ asset('Images/BellFillLogo.svg') }}" alt="BellFill" class="BellFillLogo" width="200px"/>
+        </div>
+    </div>
+    <div class="boxPublication">
+        
+            {% for post in posts %}
+            <div class="Publication">
+                <div class="utilisateur">
+                    <img src="{{ asset('Images/PhotoUtilisateur.png') }}" alt="PhotoUtilisateur" class="PhotoUtilisateur"/>
+                    <div class="PublicationPseudo">{{ post.user.pseudo }}</div>
+                </div>
+                <div class="containerTitle">
+                    <div class="PublicationTitle">{{ post.title }}</div>
+                </div>
+                <div class="backGroundImage">
+                    <img src="data:image/png;base64,{{ post.image }}" alt="Image" class="PublicationImage" width="440px" />
+                </div>
+                <div class="PublicationDescription">
+                    {{ post.description }}
+                    <div class="LikeAndShare">
+                        <img src="{{ asset('Images/ShareButton.svg') }}" alt="ShareLogo" class="ShareButton"/>
+                        <img src="{{ asset('Images/LikeButton.png') }}" alt="LikeLogo" class="LikeButton"/>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+
+
+    <div class="FooterPost" >
+        <img src="{{ asset('Images/HouseDoorFill.svg') }}" alt="HouseDoor" class="HouseDoorLogo" width="200px"/>
+        <img src="{{ asset('Images/IconUser.svg') }}" alt="IconUser" class="IconUserLogo" width="200px"/>
+        <a href="{{ path('app_add') }}"><img src="{{ asset('Images/AddButton.svg') }}" alt="AddButtonLogo" class="AddButtonLogo" width="200px"/></a>
+        <a href="{{ path('app_login') }}"></a>
+        <img src="{{ asset('Images/ArrowButton.svg') }}" alt="ArrowButtonLogo" class="ArrowButtonLogo" width="200px"/>
+        <a href="{{ path('app_login') }}"><img src="{{ asset('Images/SettingButton.svg') }}" alt="SettingButtonLogo" class="SettingButtonLogo" width="200px"/></a>   
+    <div/>
+</div>
+{% endblock %}

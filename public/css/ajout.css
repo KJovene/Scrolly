@@ -1,0 +1,123 @@
+body {
+    background-color: rgb(79, 79, 79);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-wrapperAdd {
+    display: flex;
+    width: 440px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 95vh;
+    background-color: #000629;
+    backdrop-filter: blur(5px);
+    gap: -30px;
+}
+
+.HeaderPost {
+    display: flex;
+    width: 440px;
+    height: 50px;
+    background-color: #000629;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    border-bottom: solid 1px #3777FF;
+}
+
+.formWrapperAdd {
+    background-color: var(--Second, #FFE156);
+    align-items: center;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 440px;
+    padding-top: 40px;
+    padding-bottom: 15px;
+    gap:15px
+}
+
+.inputWrapperAdd #post_image {
+    width: 430px;
+    height: 347px;
+    background-color: #000629;
+    display: flex;
+}
+
+.inputWrapperAdd input[type=file]::file-selector-button {
+    margin-right: 8px;
+    border: 1px solid #fff;
+    border-radius: 5%;
+    background: #3777FF;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer; 
+    position: relative;
+    top: 130px;  
+    left: 80px
+}
+
+.Slogo, .SearchLogo, .BellFillLogo {
+    display: flex;
+    width: 30px;
+    padding: 10px;
+  }
+
+  .NotifAndMessage {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .FooterPost {
+    display: flex;
+    width: 440px;
+    height: 50px;
+    background-color: #000629;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 2vh;
+    position: absolute;
+    border-top: solid 1px #3777FF;
+  }
+  .HouseDoorLogo, .IconUserLogo, .AddButtonLogo, .ArrowButtonLogo, .SettingButtonLogo{
+    display: flex;
+    width: 30px;
+    padding-left: 30px;
+  }
+
+  .body-wrapperAdd input,textarea {
+    align-items: center;
+    border: none;
+    height: 30px;
+    display: flex;
+    text-align: center;
+    width: 100%;
+}
+  .body-wrapperAdd label {
+    color:  #3777FF;
+    font-family: Syne;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.4px;
+}
+
+.btnUpload{
+    border-radius: 50px;
+    border: 2px solid #FFF;
+    background: var(--Primary, #3777FF);
+    padding: 10px 80px;
+    color: #D9D9D9;
+    font-family: Syne;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.4px;
+    
+}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
+{% endblock %}
+
+{% block body %}
+
+<div class="body-wrapper">
+    <img src="{{ asset('Images/LogoScrolly.svg')}}" alt="Logo" class="logoScrolly" />
+    <div class="box-wrapper">
+        <img src="{{ asset('Images/TypoScrolly.svg')}}" alt="Logo" class="typoScrolly" />
+        <button class="btnInscription">
+            <a href="{{ path('app_register') }}">Inscription</a>
+        </button>
+        <button class="btnConnexion">
+            <a href="{{ path('app_login') }}">Connexion</a>
+        </button>
+    </div>
+</div>
+{% endblock %}
